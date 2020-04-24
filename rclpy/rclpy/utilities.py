@@ -85,7 +85,7 @@ def get_available_rmw_implementations():
         'rmw_typesupport')
     available_rmw_implementations = {
         name for name in available_rmw_implementations
-        if name != 'rmw_implementation'}
+        if name not in ['rmw_implementation', 'rmw_fastrtps_dynamic_cpp']}
 
     # filter by implementations in environment variable if provided
     rmw_implementations = os.environ.get('RMW_IMPLEMENTATIONS')
